@@ -1,0 +1,36 @@
+package Pertemuan5;
+
+import java.util.Scanner;
+
+public class PemilihanSwitch21 {
+    public static void main(String[] args) {
+        Scanner nuha = new Scanner(System.in);
+        System.out.println("_ _ _ Cetak KRS SIAKAD _ _ _");
+        System.out.println("Masukkan semester saat ini: ");
+        int semester = nuha.nextInt();
+
+        if (semester) {
+        } else {
+                System.out.println(" KRS Semester 1 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 2 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 3 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 4 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 5 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 6 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 7 ditampilkan");
+        }if else {
+                System.out.println(" KRS Semester 8 ditampilkan");
+        }if else {
+                System.out.println(" Semester tidak valid");
+        
+        }
+
+    
+    }
+}
