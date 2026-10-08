@@ -22,16 +22,16 @@ public class StudiKasus2_21 {
         System.out.print("Status PKM (1 untuk lolos, 0 untuk tidak lolos): ");
         statusPKM = nuha.nextInt();
 
-        // if jenis kegiatan 
+     
         if (JenisKegiatan.equalsIgnoreCase("BELMAWA") || JenisKegiatan.equalsIgnoreCase("BAKORMA") || JenisKegiatan.equalsIgnoreCase("MANDIRI") || JenisKegiatan.equalsIgnoreCase("PKM") || JenisKegiatan.equalsIgnoreCase("LAINNYA")) {
 
-            // if buat jumlah dokumen khusus lomba 
+          
             if (jumlahdokumen < 4) {
                 System.out.println("Status : Dokumen tidak lengkap (kurang " + (4 - jumlahdokumen) + " dokumen).");
                 System.out.println("Dana penghargaan tidak diberikan.");
             } else {
 
-                //if buat peringkat juara
+                
                 if (peringkatJuara>= 1 && peringkatJuara <= 3) {
                     System.out.println("Status : Dokumen lengkap.");
                     System.out.println("Dana penghargaan diberikan.");
@@ -40,9 +40,22 @@ public class StudiKasus2_21 {
                     System.out.println("Dana penghargaan tidak diberikan.");
                 }
             }
+        } else if (JenisKegiatan.equalsIgnoreCase("PKM")) {
+        System.out.println("Status pendanaan PKM (1= Lolos / 0= Tidak Lolos): ");
+        statusPKM = nuha.nextInt();
+            if (statusPKM == 1) {
+                System.out.println("Status : Dokumen lengkap.");
+                System.out.println("Dana penghargaan diberikan.");
+            } else {
+                System.out.println("Status : Dokumen lengkap, tetapi tidak lolos PKM.");
+                System.out.println("Dana penghargaan tidak diberikan.");
+            }
+        } else {
+            System.out.println("Jenis kegiatan tidak valid.");
+            System.out.println("Dana penghargaan tidak diberikan.");
         }
     }
-}
+
 
 
 
