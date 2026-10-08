@@ -2,64 +2,60 @@ package Pertemuan7;
 
 import java.util.Scanner;
 
-public class StudiKasus221 {
+public class StudiKasus2_21 {
     public static void main(String[] args) {
         Scanner nuha = new Scanner(System.in);
         String NamaMahasiswa;
         String JenisKegiatan;
         int jumlahdokumen;
         int peringkatJuara;
-        String statusPKM;
-        int dokumenKurang;
-
-        System.out.print("Nama: "); 
+        int statusPKM;
+    
+        System.out.print("Nama mahasiswa: ");
         NamaMahasiswa = nuha.nextLine();
-
-        System.out.print("Jenis Kegiatan: "); 
+        System.out.print("Jenis kegiatan (BELMAWA/BAKORMA/MANDIRI/PKM/LAINNYA): ");
         JenisKegiatan = nuha.nextLine();
-
-        System.out.print("Jumlah dokumen: "); 
+        System.out.print("Jumlah dokumen yang dikumpulkan: ");
         jumlahdokumen = nuha.nextInt();
+        System.out.print("Peringkat: ");
+        peringkatJuara = nuha.nextInt();
+        System.out.print("Status PKM (1 untuk lolos, 0 untuk tidak lolos): ");
+        statusPKM = nuha.nextInt();
 
-        if (jumlahdokumen < 4) {
+        // if jenis kegiatan 
+        if (JenisKegiatan.equalsIgnoreCase("BELMAWA") || JenisKegiatan.equalsIgnoreCase("BAKORMA") || JenisKegiatan.equalsIgnoreCase("MANDIRI") || JenisKegiatan.equalsIgnoreCase("PKM") || JenisKegiatan.equalsIgnoreCase("LAINNYA")) {
 
-            System.out.println("Dana tidak diberikan. Dokumen kurang " + (4 - jumlahdokumen));
+            // if buat jumlah dokumen khusus lomba 
+            if (jumlahdokumen < 4) {
+                System.out.println("Status : Dokumen tidak lengkap (kurang " + (4 - jumlahdokumen) + " dokumen).");
+                System.out.println("Dana penghargaan tidak diberikan.");
+            } else {
 
-        } else {
-
-            if (JenisKegiatan.equalsIgnoreCase("BELMAWA") || JenisKegiatan.equalsIgnoreCase("BAKORMA") || JenisKegiatan.equalsIgnoreCase("Mandiri")) {
-
-                System.out.print("Peringkat: "); 
-                peringkatJuara = nuha.nextInt();
-
-                if (peringkatJuara >= 1 && peringkatJuara <= 3) 
-                    System.out.println("Dana diberikan.");
-
-                else System.out.println("Dana tidak diberikan.");
-
-            } else if (statusPKM.equalsIgnoreCase("PKM"))
-
-                System.out.print("Status PKM (1=Lolos, 0=Tidak): ");
-                statusPKM = nuha.nextLine();
-
-                if (statusPKM== 1) 
-                    System.out.println("Dana diberikan.");
-
-                else 
-                    System.out.println("Dana tidak diberikan.");
-
-            } {
-
-                System.out.println("Dana tidak diberikan.");
-
+                //if buat peringkat juara
+                if (peringkatJuara>= 1 && peringkatJuara <= 3) {
+                    System.out.println("Status : Dokumen lengkap.");
+                    System.out.println("Dana penghargaan diberikan.");
+                } else {
+                    System.out.println("Status : Dokumen lengkap, tetapi bukan Juara 1, 2, atau 3.");
+                    System.out.println("Dana penghargaan tidak diberikan.");
+                }
             }
+        } else if (JenisKegiatan.equalsIgnoreCase("PKM")) {
 
+            // if buat status PKM
+            if (statusPKM == 1) {
+                System.out.println("Status : Dokumen lengkap.");
+                System.out.println("Dana penghargaan diberikan.");
+            } else {
+                System.out.println("Status : Dokumen lengkap, tetapi tidak lolos PKM.");
+                System.out.println("Dana penghargaan tidak diberikan.");
+            }
+        } else {
+            System.out.println("Jenis kegiatan tidak valid.");
+            System.out.println("Dana penghargaan tidak diberikan.");
         }
-
     }
-
-
-
+}
 
 
 

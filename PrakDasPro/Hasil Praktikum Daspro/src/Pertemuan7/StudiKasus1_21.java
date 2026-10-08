@@ -18,7 +18,7 @@ public class StudiKasus1_21 {
         totalHarga = jumlahCup * hargaPerCub;
         diskon = 0;
 
-        if (totalHarga >= 100000) {
+        if (totalHarga >= 900000) {
             diskon = totalHarga * 8 / 100;
         }
 
